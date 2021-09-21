@@ -13,7 +13,7 @@ We extracted each bit of operandA and operandB and used a for loop to calculate 
 ### OR
 We extracted each bit of operandA and operandB and used a for loop to calculate the result bit by bit.
 ### Logical Left Shift and Arithmetic Right Shift
-Because the ALU is 32-bit, we needed a 5-layer shifter. When executing SLL, we added 0; when executing SRA, we added the sign bit of operandA.
+Because the ALU is 32-bit, we needed a 5-layer shifter. When executing SLL, add 0; when executing SRA, add the sign bit of operandA.
 ### Select Operation
 Although the operation code has 5 bits, it actually uses 3 bits. So according to the lowest 3 bits of operation code, we built a gate to select operation and we used an AND gate to connect it and the operation result (if an operation was selected, it would be '1 and result = result', otherwise, '0 and result = 0'). Then, we used an OR gate to connect all of the results of AND gates. There would always be only one path which was not 0, that was exactly what we wanted.
 ### Addition and Subtraction (Checkpoint 1)
